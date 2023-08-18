@@ -1,0 +1,148 @@
+//## Colors
+//////////////////
+//### Primary
+$cyan: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+
+//### Neutral
+$dark-blue: hsl(212, 21%, 14%);
+$Dark-grayish-blue: hsl(228, 12%, 48%);
+$White: hsl(0, 0%, 100%);
+
+$bp-small: 37.5em;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //=10px root
+}
+
+.box {
+  background-color: $cream;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  height: 100vh;
+  @media only screen and (max-width: $bp-small) {
+    justify-content: center;
+    padding: 2rem;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  grid-template-rows: 60vh;
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 90%;
+    margin-bottom: 30rem;
+
+    justify-content: center;
+    align-items: end;
+    align-content: center;
+  }
+
+  &__img {
+    @media only screen and (max-width: $bp-small) {
+      height: 55%;
+    }
+
+    &-1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2rem 0rem 0rem 2rem;
+      @media only screen and (max-width: $bp-small) {
+        border-radius: 2rem 2rem 0rem 0rem;
+        object-fit: cover;
+      }
+    }
+  }
+  &__text {
+    background-color: $White;
+    border-radius: 0rem 2rem 2rem 0rem;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
+    align-items: start;
+    @media only screen and (max-width: $bp-small) {
+      border-radius: 0rem 0rem 2rem 2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      gap: 2rem;
+    }
+
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      color: $Dark-grayish-blue;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    h1 {
+      font-family: "Fraunces", sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      @media only screen and (max-width: $bp-small) {
+        font-size: 28px;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    &-y {
+      color: $cyan;
+      font-size: 35px;
+      font-family: "Fraunces", sans-serif;
+    }
+    &-x {
+      color: $Dark-grayish-blue;
+      text-decoration: line-through;
+      font-size: 12px;
+    }
+  }
+
+  &__btn {
+    margin-top: 4rem;
+    background-color: $cyan;
+    align-self: stretch;
+    border: 0;
+    color: $White;
+    height: 5rem;
+
+    border-radius: 10px;
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 2rem;
+    }
+  }
+}
+////for git to work
+.para {
+  color: $Dark-grayish-blue;
+  font-size: 18px;
+  height: 10rem;
+
+  font-weight: 500;
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.6rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 8rem;
+  }
+}
